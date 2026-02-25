@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduinx | The Intelligence Engine</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        base: {
+                            950: '#09090b', 
+                            900: '#18181b',
+                            800: '#27272a',
+                        },
+                        primary: {
+                            400: '#34d399', 
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        neural: {
+                            400: '#818cf8', 
+                            500: '#6366f1',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #09090b;
+            color: #fafafa;
+            overflow-x: hidden;
+        }
+        
+        .bg-dot-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .glass {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(39, 39, 42, 0.4) 0%, rgba(24, 24, 27, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #34d399, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .layer-box {
+            position: relative;
+        }
+        
+        .layer-box::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            bottom: -2rem;
+            left: 2rem;
+            width: 2px;
+            background: rgba(255,255,255,0.05);
+            z-index: 0;
+        }
+        
+        .layer-box:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-500/30 selection:text-white">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-[-10%] right-[-10%] w-96 h-96 bg-primary-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob z-[-1] pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] left-[-10%] w-96 h-96 bg-neural-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000 z-[-1] pointer-events-none"></div>
+    <div class="fixed inset-0 bg-dot-pattern opacity-50 z-[-2] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center shadow-lg">
+                    <i data-lucide="hexagon" class="w-6 h-6 text-base-950 fill-current"></i>
+                </div>
+                <span class="font-extrabold text-2xl tracking-tight text-white">Eduinx</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
+                <a href="home.php" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html" class="hover:text-white transition-colors">Workspace Console</a>
+                <a href="intelligence.php" class="text-white">Intelligence</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="px-6 py-2.5 text-sm font-bold bg-white text-base-950 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    Access Console
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-40 pb-16 px-6 relative z-10 border-b border-white/5 bg-base-950/50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                The <span class="text-gradient-primary">Intelligence Engine.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Discover the 5 proprietary layers powering our pipeline. We abstract noise into structured, benchmarked execution reliability.
+            </p>
+        </div>
+    </section>
+
+    <!-- The 5 Layers Detail -->
+    <section class="py-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto space-y-16">
+            
+            <!-- Layer 1 -->
+            <div class="layer-box relative z-10">
+                <div class="bg-base-950 border border-white/10 rounded-3xl p-10 md:p-12 shadow-2xl ml-0 md:ml-16 relative">
+                    <div class="absolute -left-6 md:-left-24 top-10 w-12 h-12 rounded-2xl bg-base-900 border border-white/10 flex items-center justify-center text-primary-400 shadow-xl z-10">
+                        <i data-lucide="scan-line" class="w-6 h-6"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 mb-4 rounded border border-white/10 bg-white/5 text-xs font-mono text-gray-400 uppercase tracking-widest font-bold">Layer 1</div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                        <span class="text-blue-500 text-2xl">🔵</span> JD Intelligence Layer
+                    </h2>
+                    <ul class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Converts job descriptions into execution requirements</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Identifies depth vs surface skill needs</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Detects ambiguity tolerance and system complexity</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Layer 2 -->
+            <div class="layer-box relative z-10">
+                <div class="bg-base-950 border border-primary-500/30 rounded-3xl p-10 md:p-12 shadow-[0_0_50px_rgba(16,185,129,0.05)] ml-0 md:ml-16 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-primary-500/5"></div>
+                    <div class="absolute -left-6 md:-left-24 top-10 w-12 h-12 rounded-2xl bg-primary-500 flex items-center justify-center text-base-950 shadow-[0_0_20px_rgba(16,185,129,0.4)] z-10">
+                        <i data-lucide="crosshair" class="w-6 h-6"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="inline-block px-3 py-1 mb-4 rounded border border-primary-500/20 bg-primary-500/10 text-xs font-mono text-primary-400 uppercase tracking-widest font-bold">Layer 2 &bull; The Moat</div>
+                        <h2 class="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                            <span class="text-blue-500 text-2xl">🔵</span> Deployability Scoring Engine
+                        </h2>
+                        <ul class="space-y-4 text-gray-200 text-lg mb-8">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Industry-rubric aligned benchmarking</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Execution reliability scoring</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Applied sprint simulation validation</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Ambiguity handling index</span></li>
+                        </ul>
+                        <div class="inline-flex items-center gap-2 px-5 py-3 bg-white text-base-950 text-sm font-bold rounded-xl shadow-lg">
+                            <i data-lucide="shield" class="w-5 h-5"></i> This is your moat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layer 3 -->
+            <div class="layer-box relative z-10">
+                <div class="bg-base-950 border border-neural-500/30 rounded-3xl p-10 md:p-12 shadow-2xl ml-0 md:ml-16 relative">
+                    <div class="absolute -left-6 md:-left-24 top-10 w-12 h-12 rounded-2xl bg-base-900 border border-neural-500/30 flex items-center justify-center text-neural-400 shadow-xl z-10">
+                        <i data-lucide="braces" class="w-6 h-6"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 mb-4 rounded border border-neural-500/20 bg-neural-500/10 text-xs font-mono text-neural-400 uppercase tracking-widest font-bold">Layer 3 &bull; Output Generation</div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                        <span class="text-blue-500 text-2xl">🔵</span> Signal Packet Generator
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-6">Each candidate produces:</p>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200">
+                            <i data-lucide="activity" class="text-primary-400 w-5 h-5"></i> Deployability Score
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200">
+                            <i data-lucide="zap" class="text-primary-400 w-5 h-5"></i> Execution Reliability
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200">
+                            <i data-lucide="brain-circuit" class="text-primary-400 w-5 h-5"></i> System Thinking Index
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200">
+                            <i data-lucide="layers" class="text-primary-400 w-5 h-5"></i> Domain Depth Index
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200">
+                            <i data-lucide="shield-check" class="text-primary-400 w-5 h-5"></i> Portfolio Validation Status
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-white font-bold border-primary-500/30">
+                            <i data-lucide="user-check" class="text-primary-400 w-5 h-5"></i> Mentor-Validated Status
+                        </div>
+                        <div class="bg-black/50 p-4 rounded-xl border border-white/5 flex items-center gap-3 text-gray-200 sm:col-span-2">
+                            <i data-lucide="file-json" class="text-primary-400 w-5 h-5"></i> Machine-readable JSON format
+                        </div>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-5 py-3 bg-neural-500/20 text-neural-300 border border-neural-500/30 text-sm font-bold rounded-xl shadow-lg">
+                        <i data-lucide="server" class="w-5 h-5"></i> This makes you infrastructure.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layer 4 -->
+            <div class="layer-box relative z-10">
+                <div class="bg-base-950 border border-white/10 rounded-3xl p-10 md:p-12 shadow-2xl ml-0 md:ml-16 relative">
+                    <div class="absolute -left-6 md:-left-24 top-10 w-12 h-12 rounded-2xl bg-base-900 border border-white/10 flex items-center justify-center text-primary-400 shadow-xl z-10">
+                        <i data-lucide="git-merge" class="w-6 h-6"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 mb-4 rounded border border-white/10 bg-white/5 text-xs font-mono text-gray-400 uppercase tracking-widest font-bold">Layer 4</div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                        <span class="text-blue-500 text-2xl">🔵</span> Mandate Matching Engine
+                    </h2>
+                    <ul class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Role pathway routing</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Weighted signal ranking</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Conversion probability estimation</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Interview readiness heatmap</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Layer 5 -->
+            <div class="layer-box relative z-10">
+                <div class="bg-base-950 border border-white/10 rounded-3xl p-10 md:p-12 shadow-2xl ml-0 md:ml-16 relative">
+                    <div class="absolute -left-6 md:-left-24 top-10 w-12 h-12 rounded-2xl bg-base-900 border border-white/10 flex items-center justify-center text-primary-400 shadow-xl z-10">
+                        <i data-lucide="eye" class="w-6 h-6"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 mb-4 rounded border border-white/10 bg-white/5 text-xs font-mono text-gray-400 uppercase tracking-widest font-bold">Layer 5</div>
+                    <h2 class="text-3xl font-extrabold text-white mb-6 flex items-center gap-3">
+                        <span class="text-blue-500 text-2xl">🔵</span> Hiring Visibility Layer
+                    </h2>
+                    <ul class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Recruiter dashboard</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Pre-validated pool access</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Resume noise bypass</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-primary-500 shrink-0 mt-0.5"></i> <span>Signal-first ranking</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script Init -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

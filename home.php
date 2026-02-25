@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduinx | Abstracting Talent Into Infrastructure</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        base: {
+                            950: '#09090b', 
+                            900: '#18181b',
+                            800: '#27272a',
+                        },
+                        primary: {
+                            400: '#34d399', 
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        neural: {
+                            400: '#818cf8', 
+                            500: '#6366f1',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #09090b;
+            color: #fafafa;
+            overflow-x: hidden;
+        }
+        
+        .bg-dot-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .glass {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(39, 39, 42, 0.4) 0%, rgba(24, 24, 27, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #34d399, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 30px rgba(52, 211, 153, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-500/30 selection:text-white">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-primary-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob z-[-1] pointer-events-none"></div>
+    <div class="fixed top-[20%] right-[-10%] w-[30rem] h-[30rem] bg-neural-500/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000 z-[-1] pointer-events-none"></div>
+    <div class="fixed bottom-[-20%] left-[20%] w-[40rem] h-[40rem] bg-primary-600/10 rounded-full mix-blend-screen filter blur-[150px] animate-blob animation-delay-4000 z-[-1] pointer-events-none"></div>
+    <div class="fixed inset-0 bg-dot-pattern opacity-50 z-[-2] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center shadow-lg">
+                    <i data-lucide="hexagon" class="w-6 h-6 text-base-950 fill-current"></i>
+                </div>
+                <span class="font-extrabold text-2xl tracking-tight text-white">Eduinx</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
+                <a href="home.php" class="text-white">Home</a>
+                <a href="index.html" class="hover:text-white transition-colors">Workspace Console</a>
+                <a href="intelligence.php" class="hover:text-white transition-colors">Intelligence</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="px-6 py-2.5 text-sm font-bold bg-white text-base-950 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    Access Console
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Expanded Hero Section -->
+    <section class="pt-48 pb-32 px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+        <div class="max-w-5xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-10 text-sm font-bold text-gray-300 backdrop-blur-md shadow-xl hover:bg-white/10 transition-colors cursor-pointer">
+                <span class="flex h-2.5 w-2.5 rounded-full bg-primary-400 animate-ping absolute"></span>
+                <span class="flex h-2.5 w-2.5 rounded-full bg-primary-400 relative"></span>
+                Deployability Intelligence v2.0 is Live
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl lg:text-[6rem] font-extrabold tracking-tight mb-8 leading-[1.1]">
+                Abstracting Talent <br /> into <span class="text-gradient-primary">Infrastructure.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 mb-14 max-w-3xl mx-auto leading-relaxed">
+                Stop guessing on hires. Eduinx processes unstructured job mandates and resumes through five proprietary intelligence layers to output pure execution reliability signals.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="index.html" class="px-10 py-5 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-xl rounded-2xl shadow-[0_10px_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105 active:scale-95 flex items-center gap-3">
+                    Launch Workspace Console <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </a>
+                <a href="intelligence.php" class="px-10 py-5 bg-base-900/80 backdrop-blur-xl border border-white/10 text-white hover:bg-white/5 font-extrabold text-xl rounded-2xl transition-all flex items-center gap-3">
+                    Explore The Engine
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- Impact Metrics Section -->
+    <section class="py-24 px-6 relative z-10 border-y border-white/5 bg-black/40 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="py-6 md:py-0">
+                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">0%</div>
+                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Resume Noise</div>
+                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Completely bypass keyword stuffing and vanity metrics.</p>
+                </div>
+                <div class="py-6 md:py-0">
+                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">10x</div>
+                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Faster Screening</div>
+                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Compute execution reliability signals in milliseconds.</p>
+                </div>
+                <div class="py-6 md:py-0">
+                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">98%</div>
+                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Placement Success</div>
+                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Deployability scores directly map to job performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Workflow Section -->
+    <section class="py-32 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6">The Intelligence <span class="text-gradient-primary">Workflow.</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Three simple steps to transform raw unstructured data into actionable hiring infrastructure.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+                <!-- Connector Line -->
+                <div class="hidden lg:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-white/10 flex items-center justify-center text-white mb-8 group-hover:border-primary-500/50 group-hover:scale-110 transition-all shadow-xl">
+                        <i data-lucide="file-input" class="w-10 h-10 text-primary-400"></i>
+                    </div>
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 01</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Input Unstructured Data</h3>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">Drop in raw job descriptions and candidate resumes. No formatting required. The engine handles the chaos.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-primary-500/30 flex items-center justify-center text-white mb-8 group-hover:border-primary-500 group-hover:scale-110 transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                        <i data-lucide="cpu" class="w-10 h-10 text-primary-400"></i>
+                    </div>
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 02</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">5-Layer Processing</h3>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">Data passes through JD Intelligence, Scoring Engines, and Matrix generators to extract verified signals.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-white/10 flex items-center justify-center text-white mb-8 group-hover:border-primary-500/50 group-hover:scale-110 transition-all shadow-xl">
+                        <i data-lucide="radar" class="w-10 h-10 text-primary-400"></i>
+                    </div>
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 03</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Signal Extraction</h3>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">Receive a purely objective, ranked pool of talent based on execution reliability and deployability indexing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Layers Grid -->
+    <section class="py-32 px-6 relative z-10 bg-base-950/80 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Powered by 5 Intelligence Layers</h2>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto">The architecture that turns candidates into pure infrastructure.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Layer 1 -->
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
+                        <i data-lucide="scan-line" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">1. JD Intelligence</h3>
+                    <p class="text-gray-400 text-base leading-relaxed">Converts unstructured job descriptions into strict, measurable execution requirements, detecting ambiguity tolerance and system complexity.</p>
+                </div>
+                
+                <!-- Layer 2 -->
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden border-primary-500/40 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="absolute inset-0 bg-primary-500/5"></div>
+                    <div class="absolute top-0 right-0 px-4 py-2 bg-primary-500/20 text-primary-400 text-xs font-bold uppercase rounded-bl-2xl border-b border-l border-primary-500/20">The Moat</div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors relative z-10">
+                        <i data-lucide="crosshair" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">2. Deployability Scoring</h3>
+                    <p class="text-gray-400 text-base leading-relaxed relative z-10">Industry-rubric aligned benchmarking that outputs hard execution reliability scores based on deep sprint simulation.</p>
+                </div>
+
+                <!-- Layer 3 -->
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
+                        <i data-lucide="braces" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">3. Signal Generator</h3>
+                    <p class="text-gray-400 text-base leading-relaxed">Transforms candidates into machine-readable JSON packets detailing System Thinking, Domain Depth, and Mentor Validation.</p>
+                </div>
+
+                <!-- Layer 4 -->
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] lg:col-span-1 md:col-span-2 lg:col-start-auto md:col-start-1">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
+                        <i data-lucide="git-merge" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">4. Mandate Matching</h3>
+                    <p class="text-gray-400 text-base leading-relaxed">Intelligently routes the pre-validated talent pool to the correct role pathways via weighted signal rankings.</p>
+                </div>
+
+                <!-- Layer 5 -->
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] md:col-span-2 lg:col-span-2">
+                    <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
+                        <div class="flex-1">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
+                                <i data-lucide="eye" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">5. Visibility Layer</h3>
+                            <p class="text-gray-400 text-base leading-relaxed">The ultimate recruiter dashboard providing pre-validated pool access and bypassing all traditional resume noise. See only what matters: the ability to execute.</p>
+                        </div>
+                        <div class="w-full md:w-1/3 flex justify-end">
+                            <a href="intelligence.php" class="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-xl font-bold transition-colors inline-flex items-center gap-2">
+                                Deep Dive <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-32 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto glass-card rounded-[3rem] p-12 md:p-20 text-center border-primary-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent"></div>
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8">Ready to Build Your <br/><span class="text-gradient-primary">Talent Infrastructure?</span></h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Experience the live console and see how our intelligence engine evaluates and routes talent in real-time.</p>
+                <a href="index.html" class="inline-flex items-center gap-4 px-12 py-6 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-2xl rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all hover:scale-105 active:scale-95">
+                    Enter the Console <i data-lucide="terminal" class="w-7 h-7"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-base-950 pt-16 pb-8 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center">
+                        <i data-lucide="hexagon" class="w-5 h-5 text-base-950 fill-current"></i>
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-white">Eduinx</span>
+                </div>
+                <p class="text-gray-500 max-w-sm mb-6">Abstracting talent into measurable, reliable infrastructure. Stop guessing, start deploying.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-6">Platform</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-primary-400 transition-colors">Workspace Console</a></li>
+                    <li><a href="intelligence.php" class="hover:text-primary-400 transition-colors">Intelligence Engine</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Scoring Rubrics</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">API Access</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-6">Company</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600 text-sm">
+            <p>&copy; 2026 Eduinx Intelligence. All rights reserved.</p>
+            <p class="flex items-center gap-2 mt-4 md:mt-0">Built for scale <i data-lucide="zap" class="w-4 h-4 text-primary-500"></i></p>
+        </div>
+    </footer>
+
+    <!-- Script Init -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
