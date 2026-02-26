@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduinx | Abstracting Talent Into Infrastructure</title>
+    <title>Eduinx | Signal-First Hiring Infrastructure</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,15 +110,13 @@
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center shadow-lg">
-                    <i data-lucide="hexagon" class="w-6 h-6 text-base-950 fill-current"></i>
-                </div>
-                <span class="font-extrabold text-2xl tracking-tight text-white">Eduinx</span>
+                <img src="assets/new_logo_white.png" alt="Eduinx Logo" class="h-10 md:h-12 w-auto object-contain">
             </div>
             <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
-                <a href="home.html" class="text-white">Home</a>
-                <a href="index.html" class="hover:text-white transition-colors">Workspace Console</a>
-                <a href="intelligence.html" class="hover:text-white transition-colors">Intelligence</a>
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html" class="hover:text-white transition-colors">Console</a>
+                <a href="intelligence.html" class="hover:text-white transition-colors">How It Works</a>
+                <a href="#employers" class="hover:text-white transition-colors">Employers</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="index.html" class="px-6 py-2.5 text-sm font-bold bg-white text-base-950 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
@@ -129,7 +127,7 @@
     </nav>
 
     <!-- Expanded Hero Section -->
-    <section class="pt-48 pb-32 px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+    <section id="home" class="pt-48 pb-20 px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
         <div class="max-w-5xl mx-auto">
             <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-10 text-sm font-bold text-gray-300 backdrop-blur-md shadow-xl hover:bg-white/10 transition-colors cursor-pointer">
                 <span class="flex h-2.5 w-2.5 rounded-full bg-primary-400 animate-ping absolute"></span>
@@ -137,22 +135,32 @@
                 Deployability Intelligence v2.0 is Live
             </div>
             
-            <h1 class="text-6xl md:text-8xl lg:text-[6rem] font-extrabold tracking-tight mb-8 leading-[1.1]">
-                Abstracting Talent <br /> into <span class="text-gradient-primary">Infrastructure.</span>
+            <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tight mb-8 leading-[1.1]">
+                 Signal-First Hiring <br/> <span class="text-gradient-primary">Infrastructure.</span>
             </h1>
             
-            <p class="text-xl md:text-2xl text-gray-400 mb-14 max-w-3xl mx-auto leading-relaxed">
-                Stop guessing on hires. Eduinx processes unstructured job mandates and resumes through five proprietary intelligence layers to output pure execution reliability signals.
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+                From mandate to verified shortlist powered by structured readiness scoring.
             </p>
+
+            <div class="text-sm font-mono text-gray-500 mb-10 flex flex-wrap items-center justify-center gap-4">
+                <span class="text-gray-400 font-bold">Supports:</span>
+                <span class="px-3 py-1 bg-white/5 rounded-md border border-white/10">JDs</span>
+                <span class="px-3 py-1 bg-white/5 rounded-md border border-white/10">Resumes</span>
+                <span class="px-3 py-1 bg-white/5 rounded-md border border-white/10">Skill rubrics</span>
+                <span class="px-3 py-1 bg-white/5 rounded-md border border-white/10">Interview notes</span>
+            </div>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a href="index.html" class="px-10 py-5 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-xl rounded-2xl shadow-[0_10px_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105 active:scale-95 flex items-center gap-3">
-                    Launch Workspace Console <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    Generate Signal Shortlist <i data-lucide="arrow-right" class="w-6 h-6"></i>
                 </a>
-                <a href="intelligence.php" class="px-10 py-5 bg-base-900/80 backdrop-blur-xl border border-white/10 text-white hover:bg-white/5 font-extrabold text-xl rounded-2xl transition-all flex items-center gap-3">
-                    Explore The Engine
+                <a href="#how-it-works" class="px-10 py-5 bg-base-900/80 backdrop-blur-xl border border-white/10 text-white hover:bg-white/5 font-extrabold text-xl rounded-2xl transition-all flex items-center gap-3">
+                    See Signal Breakdown
                 </a>
             </div>
+
+            
         </div>
         
         <!-- Scroll indicator -->
@@ -164,67 +172,116 @@
     <!-- Impact Metrics Section -->
     <section class="py-24 px-6 relative z-10 border-y border-white/5 bg-black/40 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-                <div class="py-6 md:py-0">
-                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">0%</div>
-                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Resume Noise</div>
-                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Completely bypass keyword stuffing and vanity metrics.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 lg:divide-x divide-white/10">
+                <div class="py-6 lg:py-0 px-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 text-glow tracking-tighter">120+</div>
+                    <p class="text-gray-400 font-medium text-sm leading-relaxed max-w-[200px] mx-auto">AI Hiring Engagements Across Product, Data & GenAI Roles</p>
                 </div>
-                <div class="py-6 md:py-0">
-                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">10x</div>
-                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Faster Screening</div>
-                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Compute execution reliability signals in milliseconds.</p>
+                <div class="py-6 lg:py-0 px-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 text-glow tracking-tighter">65%</div>
+                    <p class="text-gray-400 font-medium text-sm leading-relaxed max-w-[200px] mx-auto">Deployability Validation Rate Before Interview Routing</p>
                 </div>
-                <div class="py-6 md:py-0">
-                    <div class="text-5xl md:text-7xl font-extrabold text-white mb-4 text-glow tracking-tighter">98%</div>
-                    <div class="text-gray-400 font-mono uppercase tracking-widest text-sm font-bold">Placement Success</div>
-                    <p class="mt-4 text-gray-500 max-w-xs mx-auto">Deployability scores directly map to job performance.</p>
+                <div class="py-6 lg:py-0 px-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 text-glow tracking-tighter">1,000+</div>
+                    <p class="text-gray-400 font-medium text-sm leading-relaxed max-w-[200px] mx-auto">AI Profiles Standardized & Signal-Scored</p>
+                </div>
+                <div class="py-6 lg:py-0 px-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 text-glow tracking-tighter">250+</div>
+                    <p class="text-gray-400 font-medium text-sm leading-relaxed max-w-[200px] mx-auto">Employer Interview Processes Executed with Mandate-Level Tracking</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works / Workflow Section -->
-    <section class="py-32 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-extrabold mb-6">The Intelligence <span class="text-gradient-primary">Workflow.</span></h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Three simple steps to transform raw unstructured data into actionable hiring infrastructure.</p>
+    <!-- Minimal How It Works Section -->
+    <section id="how-it-works" class="pt-32 pb-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-16">How it works: <span class="text-gray-500">Three steps only.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="text-primary-400 font-mono font-bold text-xl mb-4">1. Ingest</div>
+                    <p class="text-white text-lg font-medium">Mandates + resumes are structured.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-primary-500/30 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                    <div class="text-primary-400 font-mono font-bold text-xl mb-4">2. Score</div>
+                    <p class="text-white text-lg font-medium">Execution checkpoints are validated.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="text-primary-400 font-mono font-bold text-xl mb-4">3. Route</div>
+                    <p class="text-white text-lg font-medium">Signal-rich candidates enter active pipelines.</p>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
-                <!-- Connector Line -->
-                <div class="hidden lg:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent z-0"></div>
+            <div class="mt-12 text-gray-500 font-bold text-xl">Built for: AI Hiring Managers  •  Enterprise Recruiters  •  Talent Operators</div>
+        </div>
+    </section>
 
-                <!-- Step 1 -->
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-white/10 flex items-center justify-center text-white mb-8 group-hover:border-primary-500/50 group-hover:scale-110 transition-all shadow-xl">
-                        <i data-lucide="file-input" class="w-10 h-10 text-primary-400"></i>
+    <!-- Detailed Workflow Section -->
+    <section class="py-20 px-6 relative z-10 border-b border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">From Hiring Mandate to Verified <span class="text-gradient-primary">Execution Signals</span></h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Three structured layers that eliminate resume guesswork and deliver interview-ready AI talent.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
+                <!-- Step 01 -->
+                <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left group glass-card p-8 rounded-3xl">
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">STEP 01</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Mandate Intelligence</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Auto-structure your job description and candidate profiles into a standardized evaluation blueprint.</p>
+                    <ul class="text-left text-gray-300 space-y-3 mt-auto w-full">
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="text-primary-400 w-5 h-5 shrink-0 mt-0.5"></i> Role expectations</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="text-primary-400 w-5 h-5 shrink-0 mt-0.5"></i> Skill depth</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="text-primary-400 w-5 h-5 shrink-0 mt-0.5"></i> Execution benchmarks</li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-white/10 w-full text-sm font-bold text-gray-500">
+                        No keyword filtering. No manual screening.
                     </div>
-                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 01</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Input Unstructured Data</h3>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">Drop in raw job descriptions and candidate resumes. No formatting required. The engine handles the chaos.</p>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-primary-500/30 flex items-center justify-center text-white mb-8 group-hover:border-primary-500 group-hover:scale-110 transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-                        <i data-lucide="cpu" class="w-10 h-10 text-primary-400"></i>
+                <!-- Step 02 -->
+                <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left group glass-card p-8 rounded-3xl border-primary-500/30 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">STEP 02</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Deployability Validation Engine ™</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Every candidate is evaluated across five execution layers:</p>
+                    <ul class="text-left text-gray-300 space-y-3 mt-auto w-full">
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="text-primary-500 w-5 h-5 shrink-0 mt-0.5"></i> Business problem-solving depth</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="text-primary-500 w-5 h-5 shrink-0 mt-0.5"></i> Technical execution capability</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="text-primary-500 w-5 h-5 shrink-0 mt-0.5"></i> Real-case performance</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="text-primary-500 w-5 h-5 shrink-0 mt-0.5"></i> Role-to-skill alignment</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="text-primary-500 w-5 h-5 shrink-0 mt-0.5"></i> Interview readiness benchmarking</li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-white/10 w-full text-sm font-bold text-primary-400">
+                        Each profile becomes a signal-scored asset, not a resume guess.
                     </div>
-                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 02</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">5-Layer Processing</h3>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">Data passes through JD Intelligence, Scoring Engines, and Matrix generators to extract verified signals.</p>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-24 h-24 rounded-3xl bg-base-900 border-2 border-white/10 flex items-center justify-center text-white mb-8 group-hover:border-primary-500/50 group-hover:scale-110 transition-all shadow-xl">
-                        <i data-lucide="radar" class="w-10 h-10 text-primary-400"></i>
+                <!-- Step 03 -->
+                <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left group glass-card p-8 rounded-3xl">
+                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">STEP 03</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Signal-Qualified Shortlist</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">Receive a ranked, interview-ready shortlist including:</p>
+                    <ul class="text-left text-gray-300 space-y-3 mt-auto w-full">
+                        <li class="flex items-start gap-2"><i data-lucide="file-text" class="text-neural-400 w-5 h-5 shrink-0 mt-0.5"></i> Deployability Score</li>
+                        <li class="flex items-start gap-2"><i data-lucide="file-text" class="text-neural-400 w-5 h-5 shrink-0 mt-0.5"></i> Validation Summary</li>
+                        <li class="flex items-start gap-2"><i data-lucide="file-text" class="text-neural-400 w-5 h-5 shrink-0 mt-0.5"></i> Strength & Gap Analysis</li>
+                        <li class="flex items-start gap-2"><i data-lucide="file-text" class="text-neural-400 w-5 h-5 shrink-0 mt-0.5"></i> Interview Qualification Signal</li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-white/10 w-full text-sm font-bold text-gray-400">
+                        Ready for immediate pipeline entry.
                     </div>
-                    <div class="text-sm font-mono text-primary-400 uppercase tracking-widest font-bold mb-3">Step 03</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Signal Extraction</h3>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">Receive a purely objective, ranked pool of talent based on execution reliability and deployability indexing.</p>
                 </div>
+            </div>
+
+            <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#" class="px-8 py-4 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-lg rounded-2xl shadow-lg transition-all hover:scale-105">
+                    Book Employer Demo →
+                </a>
+                <a href="#" class="px-8 py-4 bg-white/5 border border-white/10 text-white hover:bg-white/10 font-extrabold text-lg rounded-2xl transition-all">
+                    Access Console →
+                </a>
             </div>
         </div>
     </section>
@@ -233,62 +290,77 @@
     <section class="py-32 px-6 relative z-10 bg-base-950/80 border-y border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Powered by 5 Intelligence Layers</h2>
-                <p class="text-xl text-gray-500 max-w-2xl mx-auto">The architecture that turns candidates into pure infrastructure.</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">5 Signal Layers That Reduce Hiring Risk</h2>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto">From JD to validated shortlist each layer removes noise and increases interview confidence.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Layer 1 -->
-                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
-                        <i data-lucide="scan-line" class="w-7 h-7"></i>
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20">
+                        <i data-lucide="file-search" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">1. JD Intelligence</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Converts unstructured job descriptions into strict, measurable execution requirements, detecting ambiguity tolerance and system complexity.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">1) Mandate Intelligence</h3>
+                    <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">Turns your JD into a structured role scorecard: must-haves, nice-to-haves, depth expectations, and evaluation checkpoints.</p>
+                    <div class="pt-4 border-t border-white/10 font-mono text-sm font-bold text-primary-400 bg-primary-500/5 -mx-10 -mb-10 p-6 rounded-b-[2rem]">
+                        Output: <span class="text-white">Role scorecard + benchmark rubric</span>
+                    </div>
                 </div>
                 
                 <!-- Layer 2 -->
-                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden border-primary-500/40 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden border-primary-500/40 shadow-[0_0_30px_rgba(16,185,129,0.05)] flex flex-col h-full">
                     <div class="absolute inset-0 bg-primary-500/5"></div>
                     <div class="absolute top-0 right-0 px-4 py-2 bg-primary-500/20 text-primary-400 text-xs font-bold uppercase rounded-bl-2xl border-b border-l border-primary-500/20">The Moat</div>
-                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 relative z-10">
                         <i data-lucide="crosshair" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">2. Deployability Scoring</h3>
-                    <p class="text-gray-400 text-base leading-relaxed relative z-10">Industry-rubric aligned benchmarking that outputs hard execution reliability scores based on deep sprint simulation.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">2) Deployability Scoring</h3>
+                    <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow relative z-10">Scores candidates on execution readiness, not resume keywords-using role-aligned benchmarks and proof-of-work validation.</p>
+                    <div class="pt-4 border-t border-white/10 font-mono text-sm font-bold text-primary-400 bg-primary-500/10 -mx-10 -mb-10 p-6 rounded-b-[2rem] relative z-10">
+                        Output: <span class="text-white">Deployability score + confidence level</span>
+                    </div>
                 </div>
 
                 <!-- Layer 3 -->
-                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
-                        <i data-lucide="braces" class="w-7 h-7"></i>
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20">
+                        <i data-lucide="box" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">3. Signal Generator</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Transforms candidates into machine-readable JSON packets detailing System Thinking, Domain Depth, and Mentor Validation.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">3) Signal Pack Generator</h3>
+                    <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">Creates a recruiter-ready signal packet: strengths, gaps, evidence, and recommended interview focus areas.</p>
+                    <div class="pt-4 border-t border-white/10 font-mono text-sm font-bold text-primary-400 bg-primary-500/5 -mx-10 -mb-10 p-6 rounded-b-[2rem]">
+                        Output: <span class="text-white">Signal summary + interview guide</span>
+                    </div>
                 </div>
 
                 <!-- Layer 4 -->
-                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] lg:col-span-1 md:col-span-2 lg:col-start-auto md:col-start-1">
-                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 lg:col-span-1 md:col-span-2 lg:col-start-auto md:col-start-1 flex flex-col h-full">
+                    <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20">
                         <i data-lucide="git-merge" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">4. Mandate Matching</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Intelligently routes the pre-validated talent pool to the correct role pathways via weighted signal rankings.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">4) Mandate Matching</h3>
+                    <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">Matches candidates to the right roles using signal fit, seniority depth, and domain alignment-so shortlists are actually relevant.</p>
+                    <div class="pt-4 border-t border-white/10 font-mono text-sm font-bold text-primary-400 bg-primary-500/5 -mx-10 -mb-10 p-6 rounded-b-[2rem]">
+                        Output: <span class="text-white">Ranked shortlist + fit rationale</span>
+                    </div>
                 </div>
 
                 <!-- Layer 5 -->
-                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] md:col-span-2 lg:col-span-2">
-                    <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
-                        <div class="flex-1">
-                            <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20 group-hover:bg-primary-500 group-hover:text-base-950 transition-colors">
-                                <i data-lucide="eye" class="w-7 h-7"></i>
+                <div class="glass-card p-10 rounded-[2rem] group hover:-translate-y-2 transition-transform duration-300 md:col-span-2 lg:col-span-2 flex flex-col h-full">
+                    <div class="flex flex-col md:flex-row gap-8 items-start h-full">
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 flex items-center justify-center mb-8 border border-primary-500/20">
+                                <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-white mb-4">5. Visibility Layer</h3>
-                            <p class="text-gray-400 text-base leading-relaxed">The ultimate recruiter dashboard providing pre-validated pool access and bypassing all traditional resume noise. See only what matters: the ability to execute.</p>
+                            <h3 class="text-2xl font-bold text-white mb-4">5) Visibility Dashboard</h3>
+                            <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">A recruiter console that shows only validated talent with signal filters, pipeline stage tracking, and decision-ready views.</p>
+                            <div class="pt-4 border-t border-white/10 font-mono text-sm font-bold text-primary-400 bg-primary-500/5 -mx-10 -mb-10 p-6 rounded-b-[2rem]">
+                                Output: <span class="text-white">Signal dashboard + pipeline visibility</span>
+                            </div>
                         </div>
-                        <div class="w-full md:w-1/3 flex justify-end">
-                            <a href="intelligence.php" class="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-xl font-bold transition-colors inline-flex items-center gap-2">
-                                Deep Dive <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-full md:w-auto flex justify-end md:mt-0 mt-8">
+                            <a href="#" class="px-6 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-xl font-bold transition-colors inline-flex items-center gap-2 whitespace-nowrap">
+                                View Sample Output <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </a>
                         </div>
                     </div>
@@ -302,10 +374,10 @@
         <div class="max-w-5xl mx-auto glass-card rounded-[3rem] p-12 md:p-20 text-center border-primary-500/20 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent"></div>
             <div class="relative z-10">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8">Ready to Build Your <br/><span class="text-gradient-primary">Talent Infrastructure?</span></h2>
-                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Experience the live console and see how our intelligence engine evaluates and routes talent in real-time.</p>
-                <a href="index.html" class="inline-flex items-center gap-4 px-12 py-6 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-2xl rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all hover:scale-105 active:scale-95">
-                    Enter the Console <i data-lucide="terminal" class="w-7 h-7"></i>
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8">Replace Resume Guesswork <br/><span class="text-gradient-primary">with Deployability Signals.</span></h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Watch how our validation engine qualifies candidates before interviews begin.</p>
+                <a href="#" class="inline-flex items-center gap-4 px-12 py-6 bg-white text-base-950 hover:bg-gray-200 font-extrabold text-2xl rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all hover:scale-105 active:scale-95">
+                    Book Employer Demo <i data-lucide="arrow-right" class="w-7 h-7"></i>
                 </a>
             </div>
         </div>
@@ -316,10 +388,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 md:col-span-2">
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center">
-                        <i data-lucide="hexagon" class="w-5 h-5 text-base-950 fill-current"></i>
-                    </div>
-                    <span class="font-extrabold text-xl tracking-tight text-white">Eduinx</span>
+                    <img src="assets/new_logo_white.png" alt="Eduinx Logo" class="h-10 w-auto object-contain">
                 </div>
                 <p class="text-gray-500 max-w-sm mb-6">Abstracting talent into measurable, reliable infrastructure. Stop guessing, start deploying.</p>
                 <div class="flex gap-4">
@@ -332,8 +401,8 @@
             <div>
                 <h4 class="text-white font-bold mb-6">Platform</h4>
                 <ul class="space-y-4 text-gray-400 text-sm">
-                    <li><a href="index.html" class="hover:text-primary-400 transition-colors">Workspace Console</a></li>
-                    <li><a href="intelligence.php" class="hover:text-primary-400 transition-colors">Intelligence Engine</a></li>
+                    <li><a href="#console" class="hover:text-primary-400 transition-colors">Workspace Console</a></li>
+                    <li><a href="#how-it-works" class="hover:text-primary-400 transition-colors">How It Works</a></li>
                     <li><a href="#" class="hover:text-primary-400 transition-colors">Scoring Rubrics</a></li>
                     <li><a href="#" class="hover:text-primary-400 transition-colors">API Access</a></li>
                 </ul>
