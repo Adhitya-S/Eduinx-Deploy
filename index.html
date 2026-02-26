@@ -22,17 +22,17 @@
                     },
                     colors: {
                         base: {
-                            950: '#09090b', // Deep zinc
+                            950: '#09090b',
                             900: '#18181b',
                             800: '#27272a',
                         },
                         primary: {
-                            400: '#34d399', // Emerald
+                            400: '#34d399',
                             500: '#10b981',
                             600: '#059669',
                         },
                         neural: {
-                            400: '#818cf8', // Indigo/Violet
+                            400: '#818cf8',
                             500: '#6366f1',
                         }
                     },
@@ -129,24 +129,18 @@
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-neural-500 flex items-center justify-center shadow-lg">
-                    <i data-lucide="hexagon" class="w-6 h-6 text-base-950 fill-current"></i>
-                </div>
-                <span class="font-extrabold text-2xl tracking-tight text-white">Eduinx</span>
+                <img src="assets/new_logo_white.png" alt="Eduinx Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=Eduinx'">
             </div>
             <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
-                <a href="home.html" class="text-white">Home</a>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
-                <a href="#console" class="text-white">Workspace Console</a>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-400">
-                <a href="intelligence.html" class="text-white">Intelligence</a>
+                <a href="home.html" class="hover:text-white transition-colors">Home</a>
+                <a href="#console" class="hover:text-white transition-colors">Console</a>
+                <a href="intelligence.html" class="hover:text-white transition-colors">How It Works</a>
+                <a href="#employers" class="hover:text-white transition-colors">Employers</a>
             </div>
             <div class="flex items-center space-x-4">
-                <button onclick="document.getElementById('console').scrollIntoView()" class="px-6 py-2.5 text-sm font-bold bg-white text-base-950 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <a href="#console" class="px-6 py-2.5 text-sm font-bold bg-white text-base-950 rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                     Access Console
-                </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -237,8 +231,9 @@
                                 <span class="px-4 py-1.5 bg-white/5 text-gray-300 font-mono text-sm font-bold rounded-lg border border-white/10" id="cv-count">0 Files</span>
                             </div>
                             
+                            <!-- Notice the stopPropagation to prevent double firing -->
                             <div id="drop-zone" class="bg-base-950 border-2 border-dashed border-white/20 rounded-3xl p-12 flex flex-col items-center justify-center text-center hover:border-primary-500/50 hover:bg-white/[0.02] transition-all cursor-pointer group" onclick="document.getElementById('cv-upload').click()">
-                                <input type="file" id="cv-upload" class="hidden" accept=".pdf,.txt" multiple onchange="handleFileSelect(event)">
+                                <input type="file" id="cv-upload" class="hidden" accept=".pdf,.txt" multiple onchange="handleFileSelect(event)" onclick="event.stopPropagation()">
                                 <div class="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-white/5">
                                     <i data-lucide="upload-cloud" class="w-10 h-10 text-primary-400"></i>
                                 </div>
@@ -452,6 +447,48 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-base-950 pt-16 pb-8 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="assets/new_logo_white.png" alt="Eduinx Logo" class="h-10 w-auto object-contain">
+                </div>
+                <p class="text-gray-500 max-w-sm mb-6">Abstracting talent into measurable, reliable infrastructure. Stop guessing, start deploying.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-6">Platform</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#console" class="hover:text-primary-400 transition-colors">Workspace Console</a></li>
+                    <li><a href="#how-it-works" class="hover:text-primary-400 transition-colors">How It Works</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Scoring Rubrics</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">API Access</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-6">Company</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-primary-400 transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600 text-sm">
+            <p>&copy; 2026 Eduinx Intelligence. All rights reserved.</p>
+            <p class="flex items-center gap-2 mt-4 md:mt-0">Built for scale <i data-lucide="zap" class="w-4 h-4 text-primary-500"></i></p>
+        </div>
+    </footer>
+
     <!-- App Logic -->
     <script>
         lucide.createIcons();
@@ -567,11 +604,7 @@
         jdInput.addEventListener('input', checkRunReady);
 
         function loadSampleData() {
-            jdInput.value = `Role: GenAI Engineer
-- 2+ years experience building production LLM apps.
-- Python, RAG pipelines, Pinecone/Milvus.
-- Architect cloud deployments (AWS/GCP).
-- High ambiguity tolerance required.`;
+            jdInput.value = `Role: GenAI Engineer\n- 2+ years experience building production LLM apps.\n- Python, RAG pipelines, Pinecone/Milvus.\n- Architect cloud deployments (AWS/GCP).\n- High ambiguity tolerance required.`;
 
             state.candidates = [
                 { id: 'EDX-412', name: "Alice Wang", fileName: "Alice_Wang_Resume.pdf", text: "Senior Software Engineer. Python expert with 4 years experience. Built a custom RAG pipeline using LlamaIndex and deployed on AWS. Navigates ambiguity well." },
@@ -606,7 +639,9 @@
                     }
                 }
             });
+            // Auto update downstream tabs in case mentor scores changed
             if(tabId === 'matching') renderRankedPool(); 
+            if(tabId === 'visibility') renderAnalytics(); 
         }
 
         function toggleSignalView(view) {
@@ -678,7 +713,6 @@
         }
 
         async function fetchOpenRouter() {
-            // Improved the prompt to strictly enforce accurate answers based on overlap.
             const prompt = `Evaluate the candidates' REAL uploaded resume text against the Job Description. Be mathematically accurate based on overlap.
             
             JD: """${jdInput.value}"""
@@ -687,12 +721,12 @@
             ${state.candidates.map(c => `[ID: ${c.id}, Name: ${c.name}, Resume_Text: ${c.text}]`).join('\n')}
             
             Rules for Accurate Scoring:
-            - ai_confidence_score is 0-100 based PURELY on actual resume fit against the JD. (Do not give high scores if skills are missing).
+            - ai_confidence_score is 0-100 based PURELY on actual resume fit against the JD.
             - execution_reliability: High, Medium, or Low.
             - indices: system_thinking, ambiguity_handling, domain_depth MUST be floats between 0.0 and 1.0.
             - Extract precise jd_analysis metrics.
             
-            Output ONLY raw JSON matching this structure exactly (No markdown, no conversation):
+            Output ONLY raw JSON matching this structure exactly:
             {
                 "jd_analysis": { "core_domain": "string", "surface_skills": ["string"], "depth_skills": ["string"], "system_complexity": "string" },
                 "candidates": [
@@ -718,7 +752,6 @@
             
             let content = data.choices[0].message.content;
             
-            // Highly robust JSON extractor (handles markdown wrappers / conversational text)
             const jsonMatch = content.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
                 content = jsonMatch[0];
@@ -728,13 +761,11 @@
 
             const parsedData = JSON.parse(content);
 
-            // Defensive mapping ensures we never lose candidates or crash on bad UI rendering
             const safeData = {
                 jd_analysis: parsedData.jd_analysis || { core_domain: "General", surface_skills: [], depth_skills: [], system_complexity: "Medium" },
                 candidates: state.candidates.map(origC => {
                     const aiC = parsedData.candidates?.find(c => c.id === origC.id) || {};
                     
-                    // Normalize LLM format errors for flawless chart display
                     let aiScore = aiC.ai_confidence_score || 50;
                     if (aiScore <= 1 && aiScore > 0) aiScore = Math.round(aiScore * 100); 
 
@@ -761,7 +792,7 @@
             return safeData;
         }
 
-        // Fortified fallback engine: Uses local semantic keyword matching to guarantee accurate results offline.
+        // Fortified fallback engine
         function getMockFallbackData() {
             const jdText = jdInput.value.toLowerCase();
             const keywords = jdText.match(/\b\w{4,}\b/g) || ["experience", "developer", "engineer"];
@@ -774,9 +805,8 @@
                     let matchCount = 0;
                     uniqueKeywords.forEach(kw => { if(candText.includes(kw)) matchCount++; });
                     
-                    // Algorithm to compute local overlap
                     let score = Math.round((matchCount / uniqueKeywords.length) * 100);
-                    score = Math.min(100, score + 30); // Prevent 0 scores
+                    score = Math.min(100, score + 30); 
 
                     return {
                         id: c.id, 
@@ -794,15 +824,15 @@
         }
 
         function getFinalScore(candidate) {
-            if(candidate.mentor_score === null || candidate.mentor_score === "") return candidate.ai_confidence_score;
+            if(candidate.mentor_score === null || candidate.mentor_score === "" || isNaN(candidate.mentor_score)) return candidate.ai_confidence_score;
             return Math.round((candidate.ai_confidence_score * 0.4) + (candidate.mentor_score * 0.6));
         }
 
         function populateAllLayers() {
             renderJDIntelligence();
             renderScoringEngine();
-            renderRankedPool(); // Mandate matching
-            renderAnalytics(); // Visibility
+            renderRankedPool(); 
+            renderAnalytics(); 
         }
 
         // --- 4. RENDER LOGIC PER LAYER ---
@@ -898,7 +928,7 @@
                         <div class="font-bold text-white text-xl">${c.name}</div>
                         <div class="text-xs font-mono text-gray-500 mt-2 flex items-center gap-2">
                             <span class="w-5 h-5 rounded-full bg-base-800 flex items-center justify-center text-[10px] text-white font-bold">R${i+1}</span>
-                            Routed via ${jdInput.value.substring(6, 20)}...
+                            Routed via ${jdInput.value.substring(0, 15)}...
                         </div>
                     </td>
                     <td class="px-8 py-6">
@@ -934,15 +964,37 @@
             renderActiveProfile();
         }
 
-        function handleMentorScoreInput(val) {
+        // Bugfix: Focus loss during input update - isolated DOM updates
+        function handleMentorScoreInput(inputEl) {
             if(!state.activeProfileId) return;
             const c = state.analysisData.candidates.find(x => x.id === state.activeProfileId);
-            if(c) {
-                let s = parseInt(val);
-                c.mentor_score = (isNaN(s) || val === "") ? null : Math.max(0, Math.min(100, s));
-                renderActiveProfile();
-                document.getElementById('mentor-action-dot').classList.remove('hidden');
+            if(!c) return;
+
+            let val = inputEl.value;
+            let s = parseInt(val);
+            c.mentor_score = (isNaN(s) || val === "") ? null : Math.max(0, Math.min(100, s));
+            
+            const finalScore = getFinalScore(c);
+            const isVal = c.mentor_score !== null;
+
+            // Update purely the UI components (Right side)
+            renderProfileRightPanel(c, finalScore, isVal);
+            
+            // Update UI status tags directly without touching the input DOM element
+            const statusBadge = document.getElementById('mentor-status-badge');
+            if (statusBadge) {
+                statusBadge.className = `px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${isVal ? 'bg-primary-500 text-base-950' : 'bg-white/10 text-gray-400'} transition-all shadow-sm`;
+                statusBadge.innerText = isVal ? 'Locked' : 'Pending';
             }
+
+            const panelWrap = document.getElementById('mentor-panel-wrap');
+            if (panelWrap) {
+                panelWrap.className = `bg-base-950 p-10 rounded-3xl border ${isVal ? 'border-primary-500/40 shadow-[0_0_40px_rgba(16,185,129,0.15)]' : 'border-white/10 border-dashed'} relative overflow-hidden transition-all duration-300`;
+            }
+
+            inputEl.className = `w-28 bg-black border-2 ${isVal ? 'border-primary-500/50 text-glow shadow-[0_0_20px_rgba(16,185,129,0.2)]' : 'border-white/10'} text-white font-extrabold text-4xl rounded-2xl px-4 py-4 text-center focus:border-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-500/20 transition-all placeholder-gray-800`;
+
+            document.getElementById('mentor-action-dot').classList.remove('hidden');
         }
 
         function renderActiveProfile() {
@@ -985,7 +1037,7 @@
                 </div>
 
                 <!-- THE MENTOR INPUT PANEL -->
-                <div class="bg-base-950 p-10 rounded-3xl border ${isVal ? 'border-primary-500/40 shadow-[0_0_40px_rgba(16,185,129,0.15)]' : 'border-white/10 border-dashed'} relative overflow-hidden transition-all duration-300">
+                <div id="mentor-panel-wrap" class="bg-base-950 p-10 rounded-3xl border ${isVal ? 'border-primary-500/40 shadow-[0_0_40px_rgba(16,185,129,0.15)]' : 'border-white/10 border-dashed'} relative overflow-hidden transition-all duration-300">
                     <div class="absolute -right-4 -bottom-4 opacity-5"><i data-lucide="fingerprint" class="w-48 h-48 text-primary-400"></i></div>
                     
                     <div class="relative z-10">
@@ -993,7 +1045,7 @@
                             <h4 class="text-sm font-bold text-primary-400 uppercase tracking-widest flex items-center gap-3">
                                 <i data-lucide="user-check" class="w-5 h-5"></i> Mentor-Validated Status
                             </h4>
-                            <span class="px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${isVal ? 'bg-primary-500 text-base-950' : 'bg-white/10 text-gray-400'} transition-all shadow-sm">
+                            <span id="mentor-status-badge" class="px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${isVal ? 'bg-primary-500 text-base-950' : 'bg-white/10 text-gray-400'} transition-all shadow-sm">
                                 ${isVal ? 'Locked' : 'Pending'}
                             </span>
                         </div>
@@ -1003,7 +1055,7 @@
                             <div class="flex items-center gap-6">
                                 <input type="number" min="0" max="100" placeholder="-" value="${c.mentor_score || ''}"
                                     class="w-28 bg-black border-2 ${isVal ? 'border-primary-500/50 text-glow shadow-[0_0_20px_rgba(16,185,129,0.2)]' : 'border-white/10'} text-white font-extrabold text-4xl rounded-2xl px-4 py-4 text-center focus:border-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-500/20 transition-all placeholder-gray-800"
-                                    oninput="handleMentorScoreInput(this.value)">
+                                    oninput="handleMentorScoreInput(this)">
                                 <div class="text-sm text-gray-400 leading-relaxed font-medium border-l border-white/10 pl-6">Human-in-the-loop override.<br>Locks the final Signal Packet.</div>
                             </div>
                         </div>
@@ -1011,6 +1063,10 @@
                 </div>
             `;
             
+            renderProfileRightPanel(c, finalScore, isVal);
+        }
+
+        function renderProfileRightPanel(c, finalScore, isVal) {
             document.getElementById('profile-bars').innerHTML = `
                 <div class="w-full text-center mb-6 p-8 bg-black/60 rounded-3xl border border-white/5 relative overflow-hidden shadow-inner">
                     <div class="absolute inset-0 bg-gradient-to-t from-primary-500/10 to-transparent ${isVal ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500"></div>
@@ -1024,7 +1080,6 @@
                 </div>
             `;
 
-            // Setup the JSON view
             const apiPacket = {
                 object: "signal_packet",
                 candidate_id: c.id,
